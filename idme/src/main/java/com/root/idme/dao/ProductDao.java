@@ -12,15 +12,15 @@ import com.root.idme.dto.Product;
 import com.root.idme.util.Constant;
 
 @Component
-public class PageDao implements PageIDao {
-	private static final Logger logger = LoggerFactory.getLogger(PageDao.class);
+public class ProductDao implements ProductIDao {
+	private static final Logger logger = LoggerFactory.getLogger(ProductDao.class);
 	
 	private final SqlSession sqlSession;
 	
 	@Autowired
-	public PageDao (SqlSession sqlSession) {
+	public ProductDao (SqlSession sqlSession) {
 		this.sqlSession = sqlSession;
-		Constant.pBiz = this;
+		Constant.pDao = this;
 	}
 
 	@Override

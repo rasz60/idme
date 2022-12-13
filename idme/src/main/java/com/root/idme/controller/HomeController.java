@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.root.idme.cmd.ICmd;
 import com.root.idme.cmd.RetrieveProductPageCmd;
-import com.root.idme.dao.PageIDao;
+import com.root.idme.dao.ProductIDao;
 
 /**
  * Handles requests for the application home page.
