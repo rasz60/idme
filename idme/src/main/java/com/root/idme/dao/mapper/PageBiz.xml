@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.root.idme.dao.PageIBiz">
+<mapper namespace="com.root.idme.dao.PageIDao">
 	<select id="selectTestProduct" resultType="com.root.idme.dto.Product">
 		SELECT  barcode
 			  , pName

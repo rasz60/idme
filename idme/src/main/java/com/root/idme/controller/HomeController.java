@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.root.idme.cmd.ICmd;
-import com.root.idme.cmd.RetrieveMainPageCmd;
-import com.root.idme.dao.PageIBiz;
+import com.root.idme.cmd.RetrieveProductPageCmd;
+import com.root.idme.dao.PageIDao;
 
 /**
  * Handles requests for the application home page.
@@ -39,7 +39,7 @@ public class HomeController {
 	public String product(Model model) {
 		logger.info("product >>> ");
 		
-		cmd = new RetrieveMainPageCmd();
+		cmd = new RetrieveProductPageCmd();
 		cmd.execute(model);
 		
 		return "product";

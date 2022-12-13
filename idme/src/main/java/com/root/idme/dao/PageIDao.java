@@ -2,7 +2,7 @@ package com.root.idme.dao;
 
 import com.root.idme.dto.Product;
 
-public interface PageIBiz {
+public interface PageIDao {
 	
 	Product getTestData();
 }

@@ -1,8 +1,8 @@
 package com.root.idme.util;
 
-import com.root.idme.dao.PageBiz;
+import com.root.idme.dao.PageDao;
 
 public class Constant {
 
-	public static PageBiz pBiz;
+	public static PageDao pBiz;
 }

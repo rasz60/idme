@@ -21,12 +21,9 @@ section#body_contents div#products:hover {background-color: #10A1E7;}
 </style>
 
 <script>
-
 function productPage() {
 	location.href = '/idme/product';
 }
-
-
 </script>
 
 </head>
