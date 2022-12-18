@@ -1,6 +1,7 @@
 <style>
-section#header {background-color : #ECA03A; display: flex; justify-content: space-around; height: 50px;}
+section#header {background-color : #E6B7F7; display: flex; justify-content: space-around; height: 50px;}
 div#logo {cursor: pointer;}
+img#logo {width: 100%; height: 100%;}
 </style>
 
 <script>
@@ -11,7 +12,7 @@ function mainPage() {
 
 <section id="header">
 	<div id="logo" onclick="javascript:mainPage();">
-		<h2>Logo</h2>
+		<img id="logo" src="images/logo/idme3.png"/>
 	</div>
 	
 	<div id="search">

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.root.idme.dao.GoodsIDao">
+	<resultMap type="com.root.idme.dto.Goods" id="Goods">
+		<result column="g_no" property="gNo" />
+		<result column="g_name" property="gName" />
+		<result column="g_content" property="gContent" />
+		<result column="g_price" property="gPrice" />
+		<result column="g_type" property="gType" />
+		<result column="g_photo" property="gPhoto" />
+		<result column="m_no" property="mNo" />
+	</resultMap>
+
+
+	<select id="goodsDetails" resultMap="Goods">
+		SELECT * FROM IDME_GOODS
+	</select>
+</mapper>

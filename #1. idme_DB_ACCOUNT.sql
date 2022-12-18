@@ -1,0 +1,5 @@
+-- idme DATABASE USER 생성
+CREATE USER idme IDENTIFIED BY "idme1218";
+
+-- 권한 부여
+GRANT CONNECT, RESOURCE TO idme;
