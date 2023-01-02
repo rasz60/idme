@@ -14,7 +14,8 @@ public class Members {
 	public String mAddress;
 	public Timestamp mEnrollDate;
 	public String mType;
-	
+	public String errMsg;
+
 	public Members() {}
 
 	public int getmNo() {
@@ -105,5 +106,12 @@ public class Members {
 		this.mType = mType;
 	}
 	
+	public String getErrMsg() {
+		return errMsg;
+	}
+
+	public void setErrMsg(String errMsg) {
+		this.errMsg = errMsg;
+	}
 	
 }

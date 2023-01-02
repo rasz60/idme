@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.root.idme.dao.MemberIDao">
+	<resultMap type="com.root.idme.dto.Members" id="Member">
+		<result column="m_no" property="mNo" />
+		<result column="m_nickname" property="mNickname" />
+		<result column="m_bday" property="mBday" />
+		<result column="m_id" property="mId" />
+		<result column="m_pwd" property="mPwd" />
+		<result column="m_name" property="mName" />
+		<result column="m_email" property="mEmail" />
+		<result column="m_phone" property="mPhone" />
+		<result column="m_address" property="mAddress" />
+		<result column="m_enroll_date" property="mEnrollDate" />
+		<result column="m_type" property="mType" />
+	</resultMap>
+
+	<select id="idCheck" parameterType="com.root.idme.dto.Members" resultMap="Member">
+		SELECT m_id, m_pwd 
+		FROM IDME_MEMBERS
+		WHERE m_id = #{mId}
+		  AND m_pwd = #{mPwd}
+	</select>
+
+
+	<select id="login" parameterType="com.root.idme.dto.Members" resultMap="Member">
+		SELECT * 
+		FROM IDME_MEMBERS
+		WHERE m_id = #{mId}
+		  AND m_pwd = #{mPwd}
+	</select>
+	
+</mapper>
