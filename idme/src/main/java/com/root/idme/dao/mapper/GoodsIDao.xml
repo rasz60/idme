@@ -15,6 +15,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
 	<select id="goodsDetails" resultMap="Goods">
-		SELECT * FROM IDME_GOODS
+		SELECT * FROM IDME_GOODS WHERE rownum = 1
 	</select>
 </mapper>
