@@ -63,4 +63,18 @@ COMMENT ON COLUMN idme_goods.G_TYPE IS '상품 종류';
 COMMENT ON COLUMN idme_goods.G_PHOTO IS '상품 사진';
 COMMENT ON COLUMN idme_goods.M_NO IS '회원 번호';
 
+CREATE TABLE idme_photos (
+    G_NO            NUMBER          NOT NULL,
+    P_PATH          VARCHAR2(2000)  NOT NULL,
+    P_SEQ           NUMBER          NOT NULL,
+    P_FILE_NAME     VARCHAR2(2000)  NOT NULL UNIQUE,
+    
+    CONSTRAINT fk_photos_g_no FOREIGN KEY(G_NO) REFERENCES idme_goods(G_NO) ON DELETE CASCADE
+);
+
+COMMENT ON COLUMN idme_photos.G_NO IS '상품 번호';
+COMMENT ON COLUMN idme_photos.P_PATH IS '사진 경로';
+COMMENT ON COLUMN idme_photos.P_SEQ IS '사진 번호';
+COMMENT ON COLUMN idme_photos.P_FILE_NAME IS '사진 파일명';
+
 commit;
