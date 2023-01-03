@@ -26,22 +26,27 @@ public class HomeController {
 	private ICmd cmd;
 	
 	/**
-	 * Simply selects the home view to render by returning its name.
+	 * idme index page
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model, HttpSession session) {
 		logger.info("index >>> ");
 		
+		// index page cmd
 		cmd = new RetrieveIndexPageCmd();
 		cmd.execute(model);		
 		
+		// 로그인 처리가 완료되어 model에 user가 담겨있는 경우
 		if ( model.containsAttribute("user") ) {
+			// login cmd
 			cmd = new LoginCmd();
+			// model에 담긴 user 정보 get
 			Members member = (Members)model.asMap().get("user");
+			// user session에 저장
 			session.setAttribute("loginUser", member);
 			logger.info("member : " + member.getmId() + " into index page >>> ");
 		};
-		
+
 		return "index";
 	}
 	

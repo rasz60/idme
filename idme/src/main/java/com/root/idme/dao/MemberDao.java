@@ -22,12 +22,14 @@ public class MemberDao implements MemberIDao {
 		Constant.mDao = this;
 	}
 	
+	// submit 된 id,pw 유저가 있는지 확인
 	@Override
 	public Members idCheck(Members member) {
 		Members loginMember = sqlSession.selectOne("idCheck", member);
 		return loginMember;
 	}
 	
+	// submit 된 id,pw로 로그인
 	@Override
 	public Members login(Members member) {
 		Members loginMember = sqlSession.selectOne("login", member);

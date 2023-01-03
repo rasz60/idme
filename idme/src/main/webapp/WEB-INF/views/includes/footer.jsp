@@ -1,26 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<style>
-section#footer {display: flex; justify-content: center; min-width: 1200px; height: 300px; text-align: center; border-top: 4px solid orange; margin-top: 50px; 	font-family: 'Gafata', sans-serif; color: #5C5C5C;}
-div.footer_box {display: flex; width: 75%; height: 100%; padding-top: 30px;}
-div.footer_logo {width: 20%;}
-div.footer_content {display: flex; flex-wrap: wrap; width: 80%;}
-div.footer_logo img {width: 100%; height: 100%; max-width: 130px; max-height: 55px;}
-div.footer_content_top, div.footer_content_bottom {display: flex; width: 100%; height: 70%; padding-bottom: 30px; border-bottom: 1px solid lightgray;}
-div.footer_content_col {width: 33%; text-align: left; font-style: normal;}
-h4.footer_text_bold {font-size: 14px; color: #3F3F3F;}
-.footer_text {margin: 2px 0; font-size: 13px;}
-.footer_small_text {margin: 1px 0; font-size: 11px;}
-ul.follow_table {display: flex; justify-content: space-around; flex-wrap: wrap; list-style: none; padding: 0 0 ; width: 90%;}
-li.sns_col {width: 15%; padding: 5px;}
-li.follow_bottom_col {width: 45%; height: 100px; padding: 5px;}
-li.sns_col img, li.follow_bottom_col img {width: 100%; height: 100%;}
-div.footer_content_bottom div.footer_content_col {display: flex; flex-wrap: wrap; padding: 10px;}
-img.bottom_logo {width: 40px; height: 40px;}
-div.footer_content_subcol_title {width: 15%; margin-right: 10px;}
-div.footer_content_subcol_content {width: 80%;}
-</style>
-
 <section id="footer">
 	<div class="footer_box">
 		<div class="footer_logo">
@@ -110,7 +89,4 @@ div.footer_content_subcol_content {width: 80%;}
 			</div>
 		</div>
 	</div>
-	
-	
-	
 </section>

@@ -21,6 +21,9 @@ public class GoodsController {
 	private static final Logger logger = LoggerFactory.getLogger(GoodsController.class);
 	private ICmd cmd;
 	
+	/*
+	 * 상품 상세 페이지
+	 */ 
 	@RequestMapping(value = "goodsDetails", method = RequestMethod.GET)
 	public String goodsDetails(String gno, Model model, HttpSession session) {
 		logger.info("goods details page >>> ");
@@ -29,6 +32,7 @@ public class GoodsController {
 		model.addAttribute("gNo", gno);		
 		cmd.execute(model);		
 		
+		// 상세 페이지에서 로그인 했을 경우 session에 유저 정보 저장
 		if ( model.containsAttribute("user") ) {
 			cmd = new LoginCmd();
 			Members member = (Members)model.asMap().get("user");

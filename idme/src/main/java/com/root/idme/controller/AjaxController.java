@@ -23,7 +23,9 @@ public class AjaxController {
 	private static final Logger logger = LoggerFactory.getLogger(AjaxController.class);
 	private ICmd cmd;
 	
-	
+	/*
+	 *  index page 카테고리 별 상품리스트 select
+	 */
 	@ResponseBody
 	@RequestMapping(value="getGoodsList", produces="application/json; charset=UTF-8")
 	public ArrayList<Goods> getCategoryGoods(String category, Model model) {
@@ -39,7 +41,9 @@ public class AjaxController {
 		return rst;
 	}
 	
-	
+	/*
+	 *  id, pw로 된 유저 있는지 확인
+	 */
 	@ResponseBody
 	@RequestMapping(value="loginMember", produces="application/json; charset=UTF-8")
 	public Members loginMember(String id, String pwd, Model model) {

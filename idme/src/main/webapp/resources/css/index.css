@@ -1,0 +1,157 @@
+@charset "UTF-8";
+/* google custom font start */
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&family=Gafata&family=Jua&display=swap');
+html {font-family: 'DynaPuff', 'Gafata', 'Jua', sans-serif;}
+/* google custom font start */
+
+/* section start */
+section {font-style : italic; text-align: center; margin: 0 auto; min-width: 1200px;}
+section#body_contents {text-align: center; height: 1500px;}
+/* section end */
+
+/* element init start */
+input::placeholder {font-family: 'DynaPuff', cursive; font-style : italic; color: lightgray;}
+
+/* element init end */
+
+
+/* category div start */
+div#category {display: flex; justify-content: center; height: 3%; line-height: 100%; border-bottom: 1px solid lightgrey; box-shadow: 0px 15px 15px -10px #666;}
+ul#category {margin: 0 0; display: flex; justify-content: center; align-items: center; width: 50%; height: 100%; list-style: none;}
+a.categories {margin: 10px; text-decoration: none; color: #2B2B2B; font-size: 17px;}
+ul#category li {display: flex; justify-content: center; align-items: center; width: 15%; height: 100%;}
+ul#category li.active{border-bottom: 2px solid orange;}
+ul#category li.active a.categories {color: orange; font-weight: 600;}
+/* category div end */
+
+/* image slide start */
+div#slide_images {display:flex; justify-content: flex-start; height: 480px; z-index: 1; flex-wrap: nowrap; overflow: hidden; margin-top: 2px;}
+
+i.slide-btn {
+	color: white;
+	font-size: 50px !important;
+	position: absolute;	
+	top: 35%;
+	z-index: 99;
+}
+
+i.slide-left {
+	left: 5%;
+}
+
+i.slide-right {
+	right: 5%;
+}
+
+ul#img_slider {
+	position: relative;
+	display: flex; 
+	list-style: none; 
+	margin: 0 0; 
+	padding: 0 0;
+}
+
+li.slide {
+	display: flex; 
+	justify-content: center;
+}
+/* image slide end */
+
+/* goods list start */
+section#body_contents div#goods {height: 67%; cursor: pointer;}
+section#body_contents div#goods:hover {background-color: #10A1E7;}
+
+
+div#goods_box {
+	width: 60%; min-width: 1000px;
+	height: 900px;
+	margin: 0 auto;
+}
+
+div#goods_box div#title_box {
+	border-bottom: 1px solid lightgrey;
+}
+
+div#goods_box div#title_box h2 {
+	text-align: left;
+}
+
+div#goods_list {
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 98%; height: 100%;
+}
+
+div#goods_list div.goods{
+	width: 18%; height: 45%;
+	border: 1px solid lightgray;
+	border-radius: 8px; 
+	background-color: #f8f9fb;
+}
+
+div.g_photo, div.g_info, div.g_description {
+	font-style: normal;
+	font-family: 'Gafata', sans-serif;
+	padding : 0px 8px;
+}
+
+div.g_photo {
+	cursor: pointer;
+	padding: 0;
+	border-radius: 8px 8px 0px 0px; 
+	overflow: hidden;
+	height: 55%;
+	border-bottom: 1px solid lightgray;
+}
+
+div.g_photo img{
+	width: 100%; height: 100%;
+}
+
+div.g_info {
+	height: 30%;
+	font-size: 15px;
+	text-align: left;
+	border-bottom: 1px solid lightgray;
+}
+
+div.g_info h4 {
+	margin: 0 auto;
+	margin-top: 5px;
+}
+
+div.g_info h4.g_category {
+	color: darkgray;
+}
+
+div.g_info h4.g_title {
+	cursor: pointer;
+}
+
+div.g_description {
+	padding-top: 5px;
+	border-radius: 0px 0px 8px 8px; 
+	height: 12.5%;
+}
+
+p.g_content {
+	margin: 0 auto;
+	font-family: 'Gafata', sans-serif;
+	font-size: 14px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+a.more_btn {
+	display: block;
+	margin-top: 8px;
+	font-size: 12px;
+	text-decoration: none;
+	text-align: right;
+	padding-right: 10px;
+}
+/* goods list end */
