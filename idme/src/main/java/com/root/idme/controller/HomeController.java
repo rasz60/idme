@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.root.idme.cmd.ICmd;
-import com.root.idme.cmd.RetrieveProductPageCmd;
+import com.root.idme.cmd.RetrieveIndexPageCmd;
 import com.root.idme.dao.GoodsIDao;
 
 /**
@@ -28,6 +28,9 @@ public class HomeController {
 	public String home(Model model) {
 		logger.info("index >>> ");
 		
+		cmd = new RetrieveIndexPageCmd();
+		cmd.execute(model);
+		
 		return "index";
 	}
 	
@@ -35,14 +38,14 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/product", method = RequestMethod.GET)
-	public String product(Model model) {
-		logger.info("product >>> ");
-		
-		cmd = new RetrieveProductPageCmd();
-		cmd.execute(model);
-		
-		return "goods";
-	}
+//	@RequestMapping(value = "/product", method = RequestMethod.GET)
+//	public String product(Model model) {
+//		logger.info("product >>> ");
+//		
+//		cmd = new RetrieveProductPageCmd();
+//		cmd.execute(model);
+//		
+//		return "goods";
+//	}
 	
 }

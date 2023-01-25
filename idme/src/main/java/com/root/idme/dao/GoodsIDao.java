@@ -1,8 +1,29 @@
 package com.root.idme.dao;
 
-import com.root.idme.dto.Goods;
+import java.util.ArrayList;
 
+import org.springframework.stereotype.Component;
+
+import com.root.idme.dto.Goods;
+import com.root.idme.dto.Photos;
+
+@Component
 public interface GoodsIDao {
 	
-	Goods getDetails();
+	
+	// index page 메뉴로 표시될 값 select
+	ArrayList<String> getCategory();
+		
+	//
+	ArrayList<Goods> getGoodsList();
+	
+	ArrayList<Goods> getGoodsPage(int page);
+	
+	Goods getDetails(String gNo);
+	
+	ArrayList<Goods> getTypeGoodsList(String categofry);
+	
+	ArrayList<Photos> getPhotoList(int gNo);
+	
+	ArrayList<Photos> getPhotoList(ArrayList<Goods> goodsList);
 }

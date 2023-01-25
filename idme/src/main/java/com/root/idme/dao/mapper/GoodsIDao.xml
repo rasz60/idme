@@ -13,8 +13,64 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="m_no" property="mNo" />
 	</resultMap>
 
+	<resultMap type="com.root.idme.dto.Photos" id="Photos">
+		<result column="g_no" property="gNo" />
+		<result column="p_path" property="pPath" />
+		<result column="p_seq" property="pSeq" />
+		<result column="p_file_name" property="pFileName" />
+	</resultMap>
 
-	<select id="goodsDetails" resultMap="Goods">
-		SELECT * FROM IDME_GOODS WHERE rownum = 1
+	<select id="goodsDetails" parameterType="int" resultMap="Goods">
+		SELECT g_no, g_name, g_content, g_price, g_type, g_photo, m_no 
+		FROM IDME_GOODS 
+		WHERE g_no = #{gNo}
+	</select>
+	
+	<select id="getCategory" resultType="String">
+		SELECT DISTINCT(G_TYPE) FROM IDME_GOODS ORDER BY G_TYPE
+	</select>	
+	
+	<select id="getGoodsList" resultMap="Goods">
+		<![CDATA[
+			SELECT *
+			FROM (SELECT g_no, g_name, g_content, g_price, g_type, g_photo, m_no
+			      FROM idme_goods
+			      ORDER BY g_no ASC
+			)
+			WHERE rownum <= 10
+		]]>
+	</select>
+	<select id="getgoodsPage" parameterType="int" resultMap="Goods">
+		<![CDATA[
+			SELECT *
+			FROM (SELECT g_no, g_name, g_content, g_price, g_type, g_photo, m_no
+			      FROM idme_goods
+			      ORDER BY g_no ASC
+			)
+			WHERE rownum BETWEEN #{page}*10-9 AND #{page}*10
+		]]>
+	</select>
+	<select id="getTypeGoodsList" parameterType="String" resultMap="Goods">
+		<![CDATA[
+			SELECT *
+			FROM (SELECT g_no, g_name, g_content, TO_CHAR(g_price, '999,999') AS g_price, g_type, g_photo, m_no
+			      FROM idme_goods
+			      WHERE g_type = #{category}
+			      ORDER BY G_NAME ASC
+			)
+			WHERE rownum <= 10
+		]]>
+	</select>
+	
+	<select id="photoList" parameterType="int" resultMap="Photos">
+		Select * FROM IDME_PHOTOS
+		WHERE G_NO = #{gNo}
+	</select>	
+	
+	<select id="getPhotoList2" parameterType="java.util.List" resultMap="Photos">
+		SELECT *
+		FROM IDME_PHOTOS
+		WHERE G_NO IN <foreach collection="list" item="photo" open="(" close=")" separator="," >#{photo.gNo}</foreach>
+		  AND P_SEQ = 1
 	</select>
 </mapper>
