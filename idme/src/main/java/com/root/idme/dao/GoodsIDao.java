@@ -21,7 +21,7 @@ public interface GoodsIDao {
 	
 	Goods getDetails(String gNo);
 	
-	ArrayList<Goods> getTypeGoodsList(String categofry);
+	ArrayList<Goods> getTypeGoodsList(String category);
 	
 	ArrayList<Photos> getPhotoList(int gNo);
 	

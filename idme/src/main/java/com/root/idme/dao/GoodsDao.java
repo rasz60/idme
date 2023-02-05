@@ -28,7 +28,7 @@ public class GoodsDao implements GoodsIDao {
 	@Override
 	public Goods getDetails(String gNo) {
 
-		Goods goods = sqlSession.selectOne("goodsDetails",gNo);
+		Goods goods = sqlSession.selectOne("goodsDetails", Integer.parseInt(gNo));
 		logger.info(gNo);
 		logger.info(goods.getgName());
 		

@@ -62,7 +62,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		]]>
 	</select>
 	
-	<select id="photoList" parameterType="int" resultMap="Photos">
+	<select id="getPhotoList" parameterType="int" resultMap="Photos">
 		Select * FROM IDME_PHOTOS
 		WHERE G_NO = #{gNo}
 	</select>	
